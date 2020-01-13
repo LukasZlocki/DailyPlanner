@@ -50,10 +50,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A1B76F33D73238D8731259CC21FFC7CF5E878086</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E8ED0083EA1AD9A0B3C0F477985998E6D2C03F9D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>DailyPlanner_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>DailyPlanner_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -167,6 +167,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DailyPlanner_1_TemporaryKey.pfx" />
     <None Include="DailyPlanner_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

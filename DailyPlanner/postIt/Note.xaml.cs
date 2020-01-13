@@ -1,27 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace DailyPlanner.postIt
 {
-    
+
     // Additional features
     // [14102018] -> colors of Notes added
     // [14102018] -> Size of text added
 
 
 
-     
+
     public partial class Note : Window
     {
         private double _FONT_INCREMENT = 1;
