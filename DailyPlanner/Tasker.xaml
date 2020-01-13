@@ -1,0 +1,1262 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DailyPlanner.Tasker"
+        Title="Tasker" Height="900" Width="445" WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize" ShowInTaskbar="False" >
+    <Grid x:Name="Task" Background="Transparent" MouseDown="Task_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="9"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="RectangleMain" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Grid.RowSpan="14" Opacity="0" Margin="0,0,0,-26">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FF767676" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle HorizontalAlignment="Left" Height="30" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="445" MouseDown="Rectangle_MouseDown" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBox x:Name="txtMainTaskDescr" BorderThickness="0" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="335" Margin="40,9,0,0" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Grid.Row="1" IsUndoEnabled="False" MouseDown="Rectangle_MouseDown">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtMainTaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="40" Margin="379,6,0,0" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Grid.Row="1"/>
+
+
+
+
+        <!-- Canvas with Partial 1  -->
+
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,4,0,0" Grid.Row="2" Opacity="0.75">
+            <Rectangle x:Name="Rectangle1" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial1" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="8" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial1Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="259" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="8" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial1TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="358" Canvas.Top="6"/>
+            <Button x:Name="btnAddPartial1" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial1_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <Rectangle x:Name="RecDLMain" Height="20" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Width="140" Canvas.Left="287" Canvas.Top="-26">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF47A65C" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial1Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="358" Canvas.Top="26"/>
+        </Canvas>
+
+
+
+
+        <!-- Canvas with Partial 2  -->
+
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,6,0,0" Grid.Row="3" Opacity="0.75">
+            <Rectangle x:Name="Rectangle2" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial2" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial2Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="7" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial2TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial2" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial2_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+
+            </Button>
+            <TextBox x:Name="txtPartial2Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="25"/>
+
+        </Canvas>
+
+
+
+
+        <!-- Canvas with Partial 3  -->
+
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,8,0,0" Grid.Row="4" Opacity="0.75">
+            <Rectangle x:Name="Rectangle3" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial3" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial3Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial3TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial3" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial3_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial3Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="25"/>
+
+        </Canvas>
+
+
+
+
+
+        <!-- Canvas with Partial 4  -->
+
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,11,0,0" Grid.Row="5" Opacity="0.75">
+            <Rectangle x:Name="Rectangle4" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial4" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial4Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial4TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial4" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial4_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial4Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="26"/>
+
+        </Canvas>
+
+
+
+        <!-- Canvas with Partial 5  -->
+
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,4,0,0" Grid.Row="7" Opacity="0.75">
+            <Rectangle x:Name="Rectangle5" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial5" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial5Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial5TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial5" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial5_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial5Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="26"/>
+
+        </Canvas>
+
+
+        <!-- Canvas with Partial 6  -->
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,4,0,0" Grid.Row="8" Opacity="0.75">
+            <Rectangle x:Name="Rectangle6" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial6" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial6Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial6TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial6" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial6_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial6Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="26"/>
+
+        </Canvas>
+
+
+
+
+        <!-- Canvas with Partial 7  -->
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,4,0,0" Grid.Row="9" Opacity="0.75">
+            <Rectangle x:Name="Rectangle7" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial7" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial7Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial7TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial7" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial7_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial7Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="26"/>
+
+        </Canvas>
+
+
+
+        <!-- Canvas with Partial 8  -->
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,4,0,0" Grid.Row="10" Opacity="0.75">
+            <Rectangle x:Name="Rectangle8" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial8" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial8Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial8TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial8" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial8_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial8Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="26"/>
+
+        </Canvas>
+
+
+
+
+        <!-- Canvas with Partial 9  -->
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,4,0,0" Grid.Row="11" Opacity="0.75">
+            <Rectangle x:Name="Rectangle9" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial9" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial9Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial9TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial9" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial9_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial9Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="26"/>
+
+        </Canvas>
+
+
+
+
+        <!-- Canvas with Partial 10  -->
+
+
+        <Canvas HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="408" Margin="18,4,0,0" Grid.Row="12" Opacity="0.75">
+            <Rectangle x:Name="Rectangle10" HorizontalAlignment="Left" Height="65" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="410" Canvas.Top="1" Opacity="0.75">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartial10" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="... Write task here ..." VerticalAlignment="Top" Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Canvas.Left="7" Canvas.Top="4">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial10Description" BorderThickness="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="... Description here ..." Width="336" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Height="39" VerticalAlignment="Top" Canvas.Left="6" Canvas.Top="23">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.361"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF3A3838" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="txtPartial10TaskDayLeft" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="32" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="6"/>
+
+            <Button x:Name="btnAddPartial10" Content="&lt;" HorizontalAlignment="Left" Width="10" Click="btnAddPartial10_Click" FontSize="6" Height="65" VerticalAlignment="Top" Canvas.Top="1">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0894F3" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="txtPartial10Percentage" BorderThickness="0" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="01" VerticalAlignment="Top" Width="48" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" FontSize="16" Canvas.Left="359" Canvas.Top="26"/>
+
+        </Canvas>
+
+
+
+
+        <Button x:Name="btnSlideDownForm" Content="&lt;-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="22" Margin="10,4,0,0" Height="22" Click="btnOpenTaskForm_Click" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FFF30A0A" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnAddNewPartial" Content="+" HorizontalAlignment="Left" Width="22" Margin="11,36,0,0" Grid.Row="1" Click="btnAddNewPartial_Click" Height="22" VerticalAlignment="Top">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF1A0BB0" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="txtDLDescr" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="310,41,0,0" Grid.Row="1" Grid.RowSpan="2">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedbyUser" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="370,41,0,0" Grid.Row="1" Grid.RowSpan="2">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Rectangle x:Name="RecDLPartial1" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,50,17,9" Grid.Row="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,53,0,0" Grid.Row="2">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial1" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,54,0,0" Grid.Row="2">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Rectangle x:Name="RecDLPartial2" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,52,17,7" Grid.Row="3">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy1" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,55,0,0" Grid.Row="3">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial2" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,56,0,0" Grid.Row="3">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Rectangle x:Name="RecDLPartial3" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,54,17,5" Grid.Row="4">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy2" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,57,0,0" Grid.Row="4">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial3" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,58,0,0" Grid.Row="4">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Rectangle x:Name="RecDLPartial4" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,57,17,2" Grid.Row="5">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy3" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,60,0,0" Grid.Row="5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial4" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,61,0,0" Grid.Row="5" Grid.RowSpan="2">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Rectangle x:Name="RecDLPartial5" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,52,17,8" Grid.Row="7">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy4" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,54,0,0" Grid.Row="7">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial5" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,55,0,0" Grid.Row="7">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+
+
+
+
+
+
+        <Rectangle x:Name="RecDLPartial6" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,52,17,8" Grid.Row="8                    ">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy6" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,54,0,0" Grid.Row="8">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial6" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,55,0,0" Grid.Row="8">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+
+
+
+
+
+
+
+
+        <Rectangle x:Name="RecDLPartial7" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,52,17,8" Grid.Row="9">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy7" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,54,0,0" Grid.Row="9">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial7" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,55,0,0" Grid.Row="9">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+
+
+
+
+
+
+
+
+
+
+
+        <Rectangle x:Name="RecDLPartial8" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,52,17,8" Grid.Row="10                    ">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy8" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,54,0,0" Grid.Row="10">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial8" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,55,0,0" Grid.Row="10">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+
+
+
+
+
+
+
+
+        <Rectangle x:Name="RecDLPartial9" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,52,17,8" Grid.Row="11                    ">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy9" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,54,0,0" Grid.Row="11">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial9" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,55,0,0" Grid.Row="11">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+
+
+
+
+
+        <Rectangle x:Name="RecDLPartial10" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" Margin="288,52,17,8" Grid.Row="12                    ">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FFB91717" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txtDLDescr_Copy10" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Dead Line:" VerticalAlignment="Top" Width="66" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="297,54,0,0" Grid.Row="12">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="txtDLImplementedPartial10" BorderThickness="0" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Background="{x:Null}" Foreground="#FF80DE5D" FontFamily="Sans" RenderTransformOrigin="0.5,0.5" TextChanged="txtMainTaskDescr_TextChanged" Margin="357,55,0,0" Grid.Row="12">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.361"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF3A3838" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button x:Name="btnFinishReady" Content="Finish Ready" HorizontalAlignment="Left" Width="75" Margin="225,36,0,0" Grid.Row="1" Click="btnFinishReady_Click" Height="22" VerticalAlignment="Top" Opacity="0.15">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF0BB012" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+
+
+    </Grid>
+</Window>

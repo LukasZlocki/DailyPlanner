@@ -1,0 +1,108 @@
+﻿<Window x:Name="TaskerEditor1" x:Class="DailyPlanner.TaskerEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TaskerEditor" Height="159" Width="474" AllowsTransparency="True" Background="Transparent" WindowStyle="None" Opacity="0.75">
+
+    <Grid Height="154" VerticalAlignment="Top" Margin="0,0,0,-3">
+        <!-- Canvas  -->
+
+
+        <Canvas HorizontalAlignment="Left" Width="465" Margin="0,0,0,199">
+            <Rectangle x:Name="RectangleArea" HorizontalAlignment="Left" Height="141" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="450" Canvas.Left="13" Canvas.Top="4">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4A5C56" Offset="0"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="txtPartialTask" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="... Add partial task here ..." VerticalAlignment="Top" Width="365" Canvas.Left="20" Canvas.Top="13"/>
+            <TextBox x:Name="TxtPartialDescription" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="... Add description here ..." VerticalAlignment="Top" Width="365" Canvas.Left="20" Canvas.Top="67"/>
+            <Button x:Name="btnProgress75" Content="75%" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="22" Click="btnProgress75_Clic" Canvas.Left="323" Canvas.Top="41" Opacity="0.25">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0F439E" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnProgress100" Content=":)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="22" Click="btnProgress100_Clic" Canvas.Left="355" Canvas.Top="41" Opacity="0.25">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FF0F439E" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+        </Canvas>
+
+
+
+        <Button x:Name="btnAddAndSave" Content="Add" HorizontalAlignment="Left" Width="45" Margin="404,13,0,0" Height="22" VerticalAlignment="Top" Click="btnAddAndSave_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF0F439E" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="22" Margin="405,44,0,0" Click="btnCancel_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF0F439E" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <DatePicker x:Name="DataDeadline" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,39,0,0"/>
+        <Label x:Name="lblCompletedIn" Content="Completed :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,39,0,0"/>
+        <Button x:Name="btnProgress0" Content="0%" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="22" Margin="225,41,0,0" Click="btnProgress0_Click" Opacity="0.25">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF0D439E" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnProgress25" Content="25%" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="22" Margin="258,41,0,0" Click="btnProgress25_Clic" Opacity="0.25">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF0F439E" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnProgress50" Content="50%" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="22" Margin="291,41,0,0" Click="btnProgress50_Clic" Opacity="0.25">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF0F439E" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+
+        <!-- Canvas  -->
+
+
+
+    </Grid>
+</Window>

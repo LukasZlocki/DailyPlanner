@@ -1,0 +1,27 @@
+﻿<Window x:Class="DailyPlanner.PartialTasker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PartialTasker" Height="300" Width="480" WindowStyle="None" AllowsTransparency="True" Background="Transparent" >
+    <Grid x:Name="PartialTasker1" Margin="0,0,-22,2">
+        <Grid.Background>
+            <SolidColorBrush Color="Transparent"/>
+        </Grid.Background>
+        <Rectangle x:Name="RectangleMain" HorizontalAlignment="Left" Height="270" Stroke="Black" VerticalAlignment="Top" Width="450" Margin="10,10,0,0" RadiusX="10" RadiusY="10" StrokeThickness="0" Opacity="0.75">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FF383535" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="RectangleTitle" HorizontalAlignment="Left" Height="21" RadiusY="10" RadiusX="10" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="450" Margin="10,10,0,0" MouseDown="RectangleTitle_MouseDown">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A5C56" Offset="0"/>
+                    <GradientStop Color="#FF767676" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+       
+    </Grid>
+</Window>
