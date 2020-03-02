@@ -243,6 +243,9 @@ namespace DailyPlanner.postIt
             _presentFontSize = ThisNote.NoteFontSize;
             if (upOrDown == "UP") _changedFontSize = _presentFontSize + _FONT_INCREMENT;
             if (upOrDown == "DOWN") _changedFontSize = _presentFontSize - _FONT_INCREMENT;
+            
+            // check to avoid font size = -1
+            if (_changedFontSize < 0) { _changedFontSize = _presentFontSize; } 
             ThisNote.SetNoteFontSize(_changedFontSize);
         }
 
